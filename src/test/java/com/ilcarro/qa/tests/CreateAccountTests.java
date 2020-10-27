@@ -1,18 +1,17 @@
-package com.ilcarro.qa;
+package com.ilcarro.qa.tests;
 
-import org.openqa.selenium.By;
+import com.ilcarro.qa.model.User;
 import org.testng.Assert;
 
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class CreateAccountTests extends TestBase{
+public class CreateAccountTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions(){
-        if(!isSignUpTabPresentInHeader()){
-            logOut();
+        if(!app.getHeader().isSignUpTabPresentInHeader()){
+            app.getUser().logOut();
   }
     }
 
@@ -20,25 +19,24 @@ public class CreateAccountTests extends TestBase{
 
     @Test
     public void testSignUp() throws InterruptedException {
-        click(By.cssSelector("[href='/signup']"));
-        Assert.assertTrue(isElementPresent(By.cssSelector("[class='signup__fields']")));
-        pause(2000);
+        app.getUser().clickSignUp();
+        app.getCar().pause(2000);
 
-        fillRegistrationForm( new User()
+        app.getUser().fillRegistrationForm( new User()
                 .setFirstName("Nik")
                 .setSecondName("Nk")
                 .setEmail("nk@nk.co")
                 .setPassword("nk123456"));
 
-        click(By.cssSelector("#check_policy"));
-        pause(2000);
-        submitForm();
+        app.getUser().clickCheckPolicy();
+        app.getCar().pause(2000);
+        app.getUser().submitForm();
 
-        Assert.assertTrue(isLoginFormPresent());
+        Assert.assertTrue(app.getUser().isLoginFormPresent());
 
     }
 
-//    @Test
+    //    @Test
 //    public void negativeTestSignUpWithoutSecondName()throws InterruptedException{
 //        click(By.cssSelector("[href='/signup']"));
 //        Assert.assertTrue(isElementPresent(By.xpath("form.signup__fields")));

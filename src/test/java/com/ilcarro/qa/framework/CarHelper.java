@@ -1,22 +1,25 @@
-package com.ilcarro.qa;
+package com.ilcarro.qa.framework;
 
+import com.ilcarro.qa.model.Car;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-public class FillCarFormTests extends TestBase{
-    @Test
-    public void carFormTest(){
+public class CarHelper extends HelperBase {
+    public CarHelper(WebDriver wd) {
+        super(wd);
+    }
+
+    public boolean isFindCarFormPresent(){
+        return isElementPresent(By.cssSelector(".Main_mainpage__find_your_car__AHLkw form"));
+
+    }
+
+
+
+    public void isCarFormPresent() {
         click(By.xpath("//ul[@class='header__nav desktop']//a[@href='/car']"));
         Assert.assertTrue(isElementPresent(By.cssSelector("[class='let-carwork-style_lets_car_form__2fYnX']")));
-
-        fillCarForm(new Car().setCountry("Israel").setAddress("YtzhakSade 33 ap 2").setDistance("550")
-                .setSerialNumber("45485454").setBrand("Suzuki").setModel("Boleno").setYear("2016")
-                .setEngine("95").setFuel("50").setFuelType("benzine").setGear("automat").setWheels("4wd")
-                .setHorsepower("180").setTorque("6445451").setDoors("5").setSeats("5").setCarClass("C")
-                .setAbout("new car").setFeatures("white car").setPricePerDay("50"));
-
-        submitForm();
     }
 
     public void fillCarForm(Car car) {

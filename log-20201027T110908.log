@@ -1,4 +1,4 @@
-11:09:17.275 [main] INFO  com.ilcarro.qa.TestBase - Start Test testSignUp
-11:09:22.972 [main] INFO  com.ilcarro.qa.TestBase - Stop Test testSignUp
-11:09:22.980 [main] INFO  com.ilcarro.qa.TestBase - Start Test logInRegisteredUserPositiveTest
-11:09:23.559 [main] INFO  com.ilcarro.qa.TestBase - Stop Test logInRegisteredUserPositiveTest
+11:09:17.275 [main] INFO  com.ilcarro.qa.tests.TestBase - Start Test testSignUp
+11:09:22.972 [main] INFO  com.ilcarro.qa.tests.TestBase - Stop Test testSignUp
+11:09:22.980 [main] INFO  com.ilcarro.qa.tests.TestBase - Start Test logInRegisteredUserPositiveTest
+11:09:23.559 [main] INFO  com.ilcarro.qa.tests.TestBase - Stop Test logInRegisteredUserPositiveTest
