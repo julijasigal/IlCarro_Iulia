@@ -44,7 +44,7 @@ public class CreateAccountTests extends TestBase {
 
     }
 
-    @Test(dataProvider ="validUser", dataProviderClass = DataProviders.class )
+    @Test(enabled = false,dataProvider ="validUser", dataProviderClass = DataProviders.class )
     public void testSignUpFromDataProvider(String FirstName,String SecondName, String Email, String Password) throws InterruptedException {
         app.getUser().clickSignUp();
         app.getCar().pause(2000);
@@ -65,7 +65,7 @@ public class CreateAccountTests extends TestBase {
         
     }
 
-    @Test(dataProvider ="validUserFromCSV" , dataProviderClass = DataProviders.class)
+    @Test(enabled = false,dataProvider ="validUserFromCSV" , dataProviderClass = DataProviders.class)
     public void testSignUpFromCSVDataProvider(
             User user) throws InterruptedException {
         app.getUser().clickSignUp();

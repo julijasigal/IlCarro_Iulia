@@ -17,19 +17,9 @@ public class LogInTests extends TestBase {
 
     @Test
     public void logInRegisteredUserPositiveTest() throws InterruptedException {
-        app.getHeader().clickLoginTabOnHeader();
-        app.getUser().pause(2000);
-
-        app.getUser().fillLogInForm(
-                new User()
-                        .setEmail("nk@nk.co")
-                        .setPassword("nk123456"));
+        app.getUser().login();
+    }
 
 
-        app.getUser().submitForm();
-        app.getUser().pause(2000);
-       // Assert.assertTrue(isUserLoggedIn());
-        Assert.assertTrue(app.getUser().isUserLoggedIn());
-}
 
 }

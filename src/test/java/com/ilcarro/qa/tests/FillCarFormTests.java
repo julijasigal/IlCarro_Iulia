@@ -1,9 +1,18 @@
 package com.ilcarro.qa.tests;
 
 import com.ilcarro.qa.model.Car;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class FillCarFormTests extends TestBase {
+    @BeforeClass
+    public void ensurePreconditions() throws InterruptedException {
+
+        if (!app.getUser().isUserLoggedIn()) {
+            app.getUser().login();
+        }
+
+    }
     @Test
     public void carFormTest(){
         app.getCar().isCarFormPresent();

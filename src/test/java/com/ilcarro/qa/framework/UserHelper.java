@@ -44,4 +44,29 @@ public class UserHelper extends HelperBase {
     public void clickCheckPolicy() {
         click(By.cssSelector("#check_policy"));
     }
+
+    public void login() throws InterruptedException {
+        clickLoginTabOnHeader();
+        pause(2000);
+
+        fillLogInForm(
+                new User()
+                        .setEmail("Rm@vv.il")
+                        .setPassword("Bb12345678"));
+
+
+        submitForm();
+        pause(2000);
+        // Assert.assertTrue(isUserLoggedIn());
+        //Assert.assertTrue(isUserLoggedIn());
+    }
+
+    private void clickLoginTabOnHeader() {
+        click(By.cssSelector("[href='/login']"));
+    }
 }
+
+
+
+
+
