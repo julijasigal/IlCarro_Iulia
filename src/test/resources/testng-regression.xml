@@ -1,18 +1,18 @@
-<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >-->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<!--<suite name="Regression" verbose="1" >-->
-<!--    <test name="Session" >-->
-<!--        <classes>-->
-<!--            <class name="com.ilcarro.qa.tests.CreateAccountTests" />-->
-<!--            <class name="com.ilcarro.qa.tests.LogInTests"/>-->
+<suite name="Regression" verbose="1" >
+    <test name="Session" >
+        <classes>
+            <class name="com.ilcarro.qa.tests.CreateAccountTests" />
+            <class name="com.ilcarro.qa.tests.LogInTests"/>
 
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 
-<!--    <test name="Car">-->
-<!--        <classes>-->
-<!--            <class name="com.ilcarro.qa.tests.FillCarFormTests"/>-->
+    <test name="Car">
+        <classes>
+            <class name="com.ilcarro.qa.tests.FillCarFormTests"/>
 
-<!--        </classes>-->
-<!--    </test>-->
-<!--</suite>-->
+        </classes>
+    </test>
+</suite>

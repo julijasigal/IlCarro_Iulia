@@ -3,15 +3,15 @@
 <suite name="Regression" verbose="1" >
     <test name="Session" >
         <classes>
-            <class name="com.ilcarro.qa.CreateAccountTests" />
-            <class name="com.ilcarro.qa.LogInTests"/>
+            <class name="com.ilcarro.qa.tests.CreateAccountTests" />
+            <class name="com.ilcarro.qa.tests.LogInTests"/>
 
         </classes>
     </test>
 
     <test name="Car">
         <classes>
-            <class name="com.ilcarro.qa.FillCarFormTests"/>
+            <class name="com.ilcarro.qa.tests.FillCarFormTests"/>
 
         </classes>
     </test>

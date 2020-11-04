@@ -7,22 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class CreateAccountTests extends TestBase {
 
-    @DataProvider
-    public Iterator<Object[]>validUser(){
-        List<Object[]> list = new ArrayList<>();
-        list.add(new Object[]{"fName","lName","flName@gmail.com","nk123456"});
-        list.add(new Object[]{"sima","lima","sima@gmail.com","sima12345"});
-        list.add(new Object[]{"11","22","11@ww.com","tima12345"});
-        list.add(new Object[]{"Kr","Kn","kr@gmail.com","kr1234567"});
 
-        return list.iterator();
-    }
 
     @BeforeMethod
     public void ensurePreconditions(){
@@ -52,7 +44,7 @@ public class CreateAccountTests extends TestBase {
 
     }
 
-    @Test(dataProvider ="validUser" )
+    @Test(dataProvider ="validUser", dataProviderClass = DataProviders.class )
     public void testSignUpFromDataProvider(String FirstName,String SecondName, String Email, String Password) throws InterruptedException {
         app.getUser().clickSignUp();
         app.getCar().pause(2000);
@@ -71,6 +63,24 @@ public class CreateAccountTests extends TestBase {
                 + app.getUser().isLoginFormPresent()+ "expected result is: true");
         Assert.assertTrue(app.getUser().isLoginFormPresent());
         
+    }
+
+    @Test(dataProvider ="validUserFromCSV" , dataProviderClass = DataProviders.class)
+    public void testSignUpFromCSVDataProvider(
+            User user) throws InterruptedException {
+        app.getUser().clickSignUp();
+        app.getCar().pause(2000);
+
+        app.getUser().fillRegistrationForm(user);
+
+        app.getUser().clickCheckPolicy();
+        app.getCar().pause(2000);
+        app.getUser().submitForm();
+
+        logger.info("Login form present. actual result : "
+                + app.getUser().isLoginFormPresent()+ "expected result is: true");
+        Assert.assertTrue(app.getUser().isLoginFormPresent());
+
     }
 
 

@@ -16,6 +16,7 @@ public class UserHelper extends HelperBase {
     }
 
     public boolean isLoginFormPresent(){
+
         return isElementPresent(By.cssSelector(".signup__fields"));
     }
 

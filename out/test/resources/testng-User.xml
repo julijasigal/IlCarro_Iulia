@@ -3,8 +3,8 @@
 <suite name="UserTests" verbose="1" >
     <test name="User" >
         <classes>
-            <class name="com.ilcarro.qa.CreateAccountTests" />
-            <class name="com.ilcarro.qa.LogInTests"/>
+            <class name="com.ilcarro.qa.tests.CreateAccountTests" />
+            <class name="com.ilcarro.qa.tests.LogInTests"/>
 
         </classes>
     </test>
